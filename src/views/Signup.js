@@ -1,11 +1,38 @@
 import React from 'react';
+import { useMutation } from 'react-apollo-hooks';
+import gql from 'graphql-tag';
 import Layout from '../common/Layout';
 import Input from '../common/Input'
 import useForm from '../hooks/useForm';
 
-function Signup() {
-    const catchData = (inputs) => {
-        console.log(inputs);
+const CREATE_MUTATION = gql`
+
+    mutation AddAuthor($data:AuthorInput!){
+        createNewAuthor(data:$data){
+            _id,
+            email
+            first_name
+        }
+    }
+
+`;
+
+function Signup({history}) {
+
+    const [sendSignup] = useMutation(CREATE_MUTATION);
+
+    const catchData = async (inputs) => {
+        if ( inputs.password === inputs.confirm_password){
+            delete inputs.confirm_password;
+            console.log(inputs);
+            const { data } = await sendSignup({variables:{data:{...inputs}}});
+            if(data){
+                if(data.errors) console.log(data.errors);
+                history.push('/login');
+            }
+        } else {
+            alert('Tu contraseña no coincide.');
+        }
     }
 
     const {

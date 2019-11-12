@@ -1,7 +1,7 @@
-import { useEffect, useState} from 'react';
+import { useState} from 'react';
 
-function useForm(callback){
-    const [inputs, setInputs] = useState({});
+function useForm(callback, current= {}){
+    const [inputs, setInputs] = useState(current);
 
     const handleSubmit = (event) => {
         if(event) event.preventDefault();
@@ -11,10 +11,7 @@ function useForm(callback){
     const handleInputChange = (event) => {
         event.persist();
         const {name, value} = event.target
-        setInputs(fields => ({
-            ...fields,
-            [name]: value,
-        })); // se va ejecutar cuando el onchange se ejecute en los inputs y se modifique el valor
+        setInputs(fields => ({ ...fields,[name]: value })); // se va ejecutar cuando el onchange se ejecute en los inputs y se modifique el valor
     }
 
     return {
