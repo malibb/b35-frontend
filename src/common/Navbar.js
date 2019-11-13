@@ -43,7 +43,7 @@ class Navbar extends Component{
                 { isAuthenticated ? (
                     <>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/">Hola {payload.first_name}!</Link>
+                        <Link className="nav-link" to="/me">Hola {payload.first_name}!</Link>
                         </li>
                         <li className="nav-item">
                         <Link className="nav-link" to="/create">Crea tu post!</Link>

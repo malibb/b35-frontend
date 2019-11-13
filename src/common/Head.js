@@ -4,9 +4,10 @@ import image from '../img/home-bg.jpg';
 function Head(props) {
     const [title, setTitle] = useState(props.title);//parametro por default
     const [subheading, setSubheading] = useState(props.subheading);
+    const cover = props.cover ? props.cover : image;
     return (
         <>
-            <header className="masthead" style={{backgroundImage: `url('${image}')`}}>
+            <header className="masthead" style={{backgroundImage: `url('${cover}')`}}>
                 <div className="overlay"></div>
                 <div className="container">
                 <div className="row">

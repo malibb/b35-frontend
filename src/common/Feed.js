@@ -9,6 +9,9 @@ const QUERY_POSTS = gql `
         getPosts {
             _id,
             title,
+            author{
+                first_name
+            }
         }
     }
 
@@ -30,7 +33,7 @@ function Feed() {
                         <>
                             {data.getPosts ? 
                             data.getPosts.map( post => (
-                                <PostCard title={post.title} author={post.author}
+                                <PostCard title={post.title} edit author={post.author.first_name}
                                 id={post._id} key={post._id}/>
                             ))
                             :
