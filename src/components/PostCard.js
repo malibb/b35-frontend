@@ -23,8 +23,8 @@ function PostCard({title, author, id, edit, remove}) {
               {title}
             </h2>
           </Link>
-          < p className= "post-meta" > Posted by
-            <Link to="#">{author}</Link> 
+          < p className= "post-meta" > Posted by 
+            <Link to="#"> {author}</Link> 
           </p>
           <p>
             {

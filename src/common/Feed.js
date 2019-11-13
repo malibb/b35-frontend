@@ -33,7 +33,7 @@ function Feed() {
                         <>
                             {data.getPosts ? 
                             data.getPosts.map( post => (
-                                <PostCard title={post.title} edit author={post.author.first_name}
+                                <PostCard title={post.title} author={post.author.first_name}
                                 id={post._id} key={post._id}/>
                             ))
                             :
