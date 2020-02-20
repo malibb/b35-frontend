@@ -46,19 +46,19 @@ class Navbar extends Component{
                         <Link className="nav-link" to="/me">Hola {payload.first_name}!</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/create">Crea tu post!</Link>
+                        <Link className="nav-link" to="/create">¡Crea tu post!</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/logout">Logout!</Link>
+                        <Link className="nav-link" to="/logout">Cerrar sesión</Link>
                         </li>
                     </>
                 ) : (
                     <>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/login">Login</Link>
+                        <Link className="nav-link" to="/login">Inicio de sesión</Link>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/signup">Signup!</Link>
+                        <Link className="nav-link" to="/signup">¡Registro!</Link>
                         </li>
                 </>
                 )

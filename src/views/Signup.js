@@ -42,7 +42,7 @@ function Signup({history}) {
     } = useForm(catchData);
 
     return(<>
-        <Layout head = "Crea tu cuenta en postealo!"
+        <Layout head = "¡Crea tu cuenta en postealo!"
         subhead = "Recuerda que es necesario para empezar a escribir" >
         <div className="container">
             <div className="row">
@@ -77,18 +77,18 @@ function Signup({history}) {
                     ></Input>
                     <Input
                     name="password"
-                    label="Password: "
+                    label ="Contraseña: "
                     type="password"
-                    placeholder="Escribe tu password"
+                    placeholder="Escribe tu contraseña"
                     value={inputs.password}
                     change={handleInputChange}
                     required={true}
                     ></Input>
                     <Input
                     name="confirm_password"
-                    label="Confirma tu Password: "
+                    label = "Confirma tu contraseña: "
                     type="password"
-                    placeholder="Escribe de nuevo tu password"
+                    placeholder = "Escribe de nuevo tu contraseña"
                     value={inputs.confirm_password}
                     change={handleInputChange}
                     required={true}

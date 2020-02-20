@@ -2,6 +2,7 @@ import React from 'react';
 import PostCard from '../components/PostCard';
 import { useQuery } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
+import { Link } from 'react-router-dom';
 
 const QUERY_POSTS = gql `
 
@@ -43,8 +44,7 @@ function Feed() {
                     }
             </div>
             <div className="clearfix">
-                <a className="btn btn-primary float-right" href="#">
-                    Older Posts &rarr;</a>
+                <Link to="/">Older Posts &rarr;</Link> 
             </div>
         </div>
     </div>

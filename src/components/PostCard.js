@@ -23,7 +23,7 @@ function PostCard({title, author, id, edit, remove}) {
               {title}
             </h2>
           </Link>
-          < p className= "post-meta" > Posted by 
+          < p className= "post-meta" > Posteado por  
             <Link to="#"> {author}</Link> 
           </p>
           <p>
@@ -31,7 +31,8 @@ function PostCard({title, author, id, edit, remove}) {
               edit ? <Link to={`/update/${id}`}>Editar </Link>: <></>
             } 
             {
-              remove ? <button onClick={
+              remove ? < button className = "btn btn-primary float-right"
+              onClick = {
                 () => {
 
                     deletePost({variables:{id}}).then(()=>{
@@ -39,7 +40,7 @@ function PostCard({title, author, id, edit, remove}) {
                     })
                   
                 }
-              }>Borrar post </button>
+              }>Borrar post. </button>
               : <></>
             }           
           </p>
